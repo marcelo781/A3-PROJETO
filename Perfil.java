@@ -24,7 +24,7 @@ public class Perfil {
 		public int getCpf() {
 			return cpf;
 		}
-		public void setCpf(int cpf) {
+		public void setCpf1(int cpf, int i, int j, int k) {
 			this.cpf = cpf;
 		}
 		public int getIdade() {
@@ -62,6 +62,10 @@ public class Perfil {
 		}
 		public void setTimedocoracao(String timedocoracao) {
 			this.timedocoracao = timedocoracao;
+		}
+		public void setCpf(int cpf2, int i, int j, int k) {
+			// TODO Auto-generated method stub
+			
 		}
 	
 		
