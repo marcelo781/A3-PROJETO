@@ -1,18 +1,18 @@
 package projetoDAO;
 
 import java.sql.Connection;
-import java.util.Date;
-
-import com.mysql.jdbc.PreparedStatement;
 
 import factoryconection.Classeconectora;
 import perfil.Perfil;
+import java.sql.PreparedStatement;
 
-public class projetodao {
+
+
+public class ProjetoDao {
 
 	
 	// 
-	//CRUD
+	//CRUDimport java.sql.PreparedStatement;
 	// C: CREATE
 	// R: READ
 	// U: UPDATE
@@ -21,7 +21,7 @@ public class projetodao {
 	
 	public void save(Perfil perfil) {
 	
-	String sql = "INSERT INTO perfis(nome, idade, cpf, datansc, jogofav, nacionalidade, quantconquistas, timedocoracao) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+	String sql = "INSERT INTO perfis(nome, cpf, idade, jogofav, nacionalidade, quantconquistas, timedocoracao) VALUES (?, ?, ?, ?, ?, ?, ? )";
 	
 	Connection conn = null; 
 	
@@ -70,4 +70,3 @@ public class projetodao {
 	}
 }
 	
-
