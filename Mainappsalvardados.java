@@ -3,7 +3,7 @@ package packapp;
 import perfil.Perfil;
 import projetoDAO.ProjetoDao;
 
-public class Mainapp {
+public class Mainappsalvardados {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
