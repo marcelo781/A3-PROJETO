@@ -18,17 +18,19 @@ public class Classeconectora {
 		
 		//CAMINHO DO BANCO DE DADOS
 				
-		private static final String DATABASE_URL = "jdbc:mysql://localhost:3306/principal";
+		private static final String DATABASE_URL = "jdbc:mysql://localhost:3306";
 		
 		
 		//conexão com o banco de dados
 		
+		
+		//faz com que a classe seja carregada pela jvm
 		public static Connection createConnectionToMySQL() throws Exception {
-			//faz com que a classe seja carregada pela jvm
-			Class.forName("com.mysql.jdbc.Driver");
+			
+			Class.forName("com.mysql.cj.jdbc.Driver");
 		
-		
-		Connection connection = DriverManager.getConnection(USERNAME, DATABASE_URL, PASSWORD);
+			
+			Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/perfil", USERNAME, PASSWORD);
 		
 		return connection; 
 	}
