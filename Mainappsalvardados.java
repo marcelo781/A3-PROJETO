@@ -6,26 +6,29 @@ import projetoDAO.ProjetoDao;
 public class Mainappsalvardados {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		// MVC
+		// MODEL
+		// VIEW
+		// CONTROLLER 
 		
 		ProjetoDao projetoDao = new ProjetoDao();
 		
 		
 		Perfil perfil = new Perfil();
-		perfil.setNomecliente("Marcelo");
-		perfil.setCpf (709,536,984,40);
-		perfil.setIdade(22);
-		perfil.setJogofavorito("Persona 5 Royal");
+		perfil.setNomecliente("João");
+		perfil.setIdade(17);
+		perfil.setJogofavorito("Call of Duty Modern Warfare");
 		perfil.setNacionalidade("Brasileiro");
-		perfil.setQuantconquistas(45);
-		perfil.setTimedocoracao("Corinthians");
+		perfil.setQuantconquistas(60);
+		perfil.setTimedocoracao("Flamengo");
 		
 		projetoDao.save(perfil);
 		
 		
+		// VISUALIZAÇÃO DOS REGISTROS NO BANCO 
 		
-		
+		for(Perfil p : projetoDao.getPerfis());
+		System.out.println("Perfil: "+ perfil.getNomecliente());
 	}
 
 }
