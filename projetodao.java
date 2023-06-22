@@ -28,7 +28,7 @@ public class ProjetoDao {
 	
 	
 	
-	 //CREATE
+	 //CREATE  //INSERCAO DE DADOS
 	public void save(Perfil perfil) {
 
 	
@@ -81,7 +81,8 @@ public class ProjetoDao {
 		
 	}
 	
-	//READ
+	//READ // LEITURA E LISTAGEM DE DADOS
+	
 	public List<Perfil> getPerfis(){
 	
 		String sql = "SELECT * FROM perfis";
@@ -151,7 +152,100 @@ public class ProjetoDao {
 			e.printStackTrace();
 		}
 }
-		return perfis; 
+	return perfis; }
+
+
+	
+	// UPDATE // ATUALIZACAO DE DADOS NO REGISTRO
+	
+	
+	
+	public void update(Perfil perfil) {
+		String sql = "UPDATE perfis SET nome = ?, idade = ?, jogofav = ?, nacionalidade = ?, quantconquistas = ?, timedocoracao = ? " +
+	"WHERE id = ?";
 		
+		Connection conn = null;
+		JdbcPreparedStatement pstm = null;
+		
+		
+		try { 
+			//Criar conexão com o banco
+			
+			conn = Classeconectora.createConnectionToMySQL();
+			
+			//Criar a classe pra executar a query
+			
+			pstm = (JdbcPreparedStatement) conn.prepareStatement(sql);
+			
+			//Adicionando os valores para atualizar
+			
+			pstm.setString(1, perfil.getNomecliente());
+			pstm.setInt(2, perfil.getIdade());
+			pstm.setString(3, perfil.getJogofavorito());
+			pstm.setString(4, perfil.getNacionalidade());
+			pstm.setInt(5, perfil.getQuantconquistas());
+			pstm.setString(6, perfil.getTimedocoracao());
+			
+			
+			
+			//Qual o ID do registro que deseja atualizar
+			pstm.setInt(7, perfil.getId());
+			
+			//Executar a query
+			
+			pstm.execute();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally{
+			try {
+				if(pstm!=null) {
+					pstm.close();
+			}
+			if (conn!=null) {
+				conn.close(); }}	
+			catch (Exception e) {
+				e.printStackTrace();
+			}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 		}
+	
+	
+		}
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
