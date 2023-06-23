@@ -19,29 +19,38 @@ public class Mainappsalvardados {
 		
 		
 		Perfil perfil = new Perfil();
-		perfil.setNomecliente("João");
-		perfil.setIdade(17);
-		perfil.setJogofavorito("Call of Duty Modern Warfare");
+		perfil.setNomecliente("Kauan");
+		perfil.setIdade(18);
+		perfil.setJogofavorito("Fortnite");
 		perfil.setNacionalidade("Brasileiro");
-		perfil.setQuantconquistas(60);
-		perfil.setTimedocoracao("Flamengo");
+		perfil.setQuantconquistas(5);
+		perfil.setTimedocoracao("nenhum");
 		
-		projetoDao.save(perfil);
+		 projetoDao.save(perfil);     // SE ISSO AQUI DEIXAR DE SER COMENTADO, VAI SALVAR UM PERFIL
 		
 		// ATUALIZAR O CONTATO
 		
 		Perfil p1 = new Perfil();
 
-		p1.setNomecliente("João Henrique");
-		p1.setIdade(20);
-		p1.setJogofavorito("Call of Duty Modern Warfare 2");
+		p1.setNomecliente("Jonatha");
+		p1.setIdade(19);
+		p1.setJogofavorito("Rocket League");
 		p1.setNacionalidade("Brasileiro");
-		p1.setQuantconquistas(80);
-		p1.setTimedocoracao("Flamengo");
+		p1.setQuantconquistas(30);
+		p1.setTimedocoracao("nenhum");
 		
-		p1.setId(7);  //NUMERO DO ID NO BANCO DE DADOS 
+		 p1.setId(3);  //NUMERO DO ID NO BANCO DE DADOS 
+		 
+		// projetoDao.update(p1);        // SE ISSO AQUI DEIXAR DE SER COMENTADO, VAI ATUALIZAR UM PERFIL	
 		
-		projetoDao.update(p1);
+		
+		//DELETAR UM CONTATO PELO SEU NUMERO DE ID
+		
+		//	projetoDao.deleteByID(7);      // SE ISSO AQUI DEIXAR DE SER COMENTADO, VAI DELETAR UM PERFIL PELO ID
+		
+		
+		
+		
 		
 		
 		// VISUALIZAÇÃO DOS REGISTROS NO BANCO 
@@ -60,6 +69,11 @@ public class Mainappsalvardados {
 	
 	
 	
+	
+	
+	
+
+}
 	
 	
 	
