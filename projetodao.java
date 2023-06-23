@@ -76,10 +76,45 @@ public class ProjetoDao {
 
 	}
 		
+	}
+	
+				// D: DELETE // EXCLUIR REGISTROS
+	public void deleteByID(int id) {
 		
+		String sql = "DELETE FROM perfis WHERE id = ?";
 		
+		Connection conn = null;
+		
+		JdbcPreparedStatement pstm = null;
+		
+		try { 
+			conn = Classeconectora.createConnectionToMySQL();
+			
+			pstm = (JdbcPreparedStatement) conn.prepareStatement(sql); 
+			
+			pstm.setInt(1, id);
+			
+			pstm.execute();
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+			}finally {
+				try {
+					if(pstm != null) {
+						pstm.close();
+					}
+					if(conn != null) {
+						conn.close(); }
+				}catch (Exception e) {
+							e.printStackTrace();
+						} { 
+						
+						}
+				}
 		
 	}
+	
+	
 	
 	//READ // LEITURA E LISTAGEM DE DADOS
 	
@@ -233,7 +268,6 @@ public class ProjetoDao {
 		}
 	
 }
-
 
 
 
