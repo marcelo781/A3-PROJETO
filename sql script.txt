@@ -1,0 +1,12 @@
+create database perfil;
+
+create table perfis(
+
+id int not null auto_increment primary key,
+nome varchar(100),
+cpf int,
+idade int,
+jogofav varchar(100),
+nacionalidade varchar(100),
+quantconquistas int,
+timedocoracao varchar(100)) 
