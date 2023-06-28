@@ -7,13 +7,13 @@ public class Perfil {
 
 	}
 
-		private String nomecliente;
-		private int idade; 
-		private int id; 
-		private String jogofavorito;
-		private String nacionalidade;
-		private int quantconquistas;
-		private String timedocoracao;
+		public String nomecliente;
+		public int idade; 
+		public int id; 
+		public String jogofavorito;
+		public String nacionalidade;
+		public int quantconquistas;
+		public String timedocoracao;
 		public String getNomecliente() {
 			return nomecliente;
 		}
@@ -66,8 +66,5 @@ public class Perfil {
 
 
 
-		}
-	
-		
 		
 	
