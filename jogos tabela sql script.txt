@@ -1,0 +1,8 @@
+create table jogos(
+
+id int not null auto_increment primary key,
+nome varchar(100),
+anodelançamento int,
+proprietaria varchar(100),
+genero varchar(100),
+preco int)
