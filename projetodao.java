@@ -1,13 +1,29 @@
 package projetoDAO;
 
+import java.sql.Array;
+import java.sql.Blob;
+import java.sql.CallableStatement;
+import java.sql.Clob;
 import java.sql.Connection;
+import java.sql.DatabaseMetaData;
+import java.sql.NClob;
 
 import factoryconection.Classeconectora;
 import perfil.Perfil;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLClientInfoException;
+import java.sql.SQLException;
+import java.sql.SQLWarning;
+import java.sql.SQLXML;
+import java.sql.Savepoint;
+import java.sql.Statement;
+import java.sql.Struct;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.Properties;
+import java.util.concurrent.Executor;
 
 import com.mysql.cj.jdbc.JdbcPreparedStatement;
 import com.mysql.cj.jdbc.PreparedStatementWrapper;
@@ -121,7 +137,7 @@ public class ProjetoDao {
 	public List<Perfil> getPerfis(){
 	
 		String sql = "SELECT * FROM perfis";
-		List<Perfil> perfis = new ArrayList<>();
+		List<Perfil> perfis = new ArrayList<Perfil>();
 		
 		Connection conn = null;
 		JdbcPreparedStatement pstm = null;
@@ -189,7 +205,11 @@ public class ProjetoDao {
 }
 	return perfis; }
 
-
+	
+		
+	
+	
+	
 	
 	// UPDATE // ATUALIZACAO DE DADOS NO REGISTRO
 	
@@ -268,6 +288,10 @@ public class ProjetoDao {
 		}
 	
 }
+
+
+
+
 
 
 
