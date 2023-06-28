@@ -1,6 +1,9 @@
 package packapp;
 
+import java.awt.image.renderable.ParameterBlock;
 import java.sql.Connection;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.mysql.cj.jdbc.JdbcPreparedStatement;
 
@@ -19,7 +22,7 @@ public class Mainappsalvardados {
 		
 		
 		Perfil perfil = new Perfil();
-		perfil.setNomecliente("Kauan");
+		perfil.setNomecliente("Bonnie");
 		perfil.setIdade(18);
 		perfil.setJogofavorito("Fortnite");
 		perfil.setNacionalidade("Brasileiro");
@@ -27,6 +30,14 @@ public class Mainappsalvardados {
 		perfil.setTimedocoracao("nenhum");
 		
 		 projetoDao.save(perfil);     // SE ISSO AQUI DEIXAR DE SER COMENTADO, VAI SALVAR UM PERFIL
+		 
+		// VISUALIZAÇÃO DOS REGISTROS NO BANCO 
+		 
+		   
+		 for  (Perfil p : projetoDao.getPerfis());
+			System.out.println("Contato: "+ perfil.getNomecliente());
+			
+		 
 		
 		// ATUALIZAR O CONTATO
 		
@@ -41,7 +52,7 @@ public class Mainappsalvardados {
 		
 		 p1.setId(3);  //NUMERO DO ID NO BANCO DE DADOS 
 		 
-		// projetoDao.update(p1);        // SE ISSO AQUI DEIXAR DE SER COMENTADO, VAI ATUALIZAR UM PERFIL	
+		 projetoDao.update(p1);        // SE ISSO AQUI DEIXAR DE SER COMENTADO, VAI ATUALIZAR UM PERFIL	
 		
 		
 		//DELETAR UM CONTATO PELO SEU NUMERO DE ID
@@ -53,11 +64,7 @@ public class Mainappsalvardados {
 		
 		
 		
-		// VISUALIZAÇÃO DOS REGISTROS NO BANCO 
 		
-		for(Perfil p : projetoDao.getPerfis());
-		System.out.println("Perfil: "+ perfil.getNomecliente());
-	
 
 }
 		
@@ -75,8 +82,5 @@ public class Mainappsalvardados {
 
 }
 	
-	
-	
 
-}
 	
